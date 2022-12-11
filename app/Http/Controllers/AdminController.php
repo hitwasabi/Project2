@@ -24,8 +24,8 @@ class AdminController extends Controller
         return view('client/home',['home'=>$products]);
     }
 
-    function show($id){
-        $products = Product::findById($id);
-        return view('client/home',['home'=>$products]);
+    function show($product_id){
+        $product = Product::findById($product_id);
+        return view('client/home',['home'=>$product]);
     }
 }
