@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,14 +14,18 @@ class AdminController extends Controller
         return view('admin/home');
     }
 
+    function viewClient(){
+        return view('client/home');
+    }
+
     function viewProduct(){
-        $product = Product::all();
-        dd($product);
-        return view('admin/product/index',['product'=>$product]);
+        $products = Product::all();
+        dd($products);
+        return view('client/home',['home'=>$products]);
     }
 
     function show($id){
-        $product = Product::findById($id);
-        return view('admin/product/index',['product'=>$product]);
+        $products = Product::findById($id);
+        return view('client/home',['home'=>$products]);
     }
 }

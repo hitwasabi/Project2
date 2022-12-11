@@ -22,7 +22,9 @@ Route::get('home',function (){
 });
 
 Route::get('/admin/home',[\App\Http\Controllers\AdminController::class,'viewHome']);
-Route::get('/admin/product',[\App\Http\Controllers\AdminController::class,'viewProduct']);
+Route::get('/client/home',[\App\Http\Controllers\AdminController::class,'viewProduct']);
+Route::get('/client/home',[\App\Http\Controllers\AdminController::class,'show']);
 Route::get('/login',[\App\Http\Controllers\LoginController::class,'viewLogin']);
+Route::get('/client/home',[\App\Http\Controllers\AdminController::class,'viewClient']);
 Route::post('/login',[\App\Http\Controllers\LoginController::class,'login']);
 Route::post('/logout',[\App\Http\Controllers\LoginController::class,'logout']);
