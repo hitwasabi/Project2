@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-
+    //oh yeah OMG
 
     //
     function viewHome(){
