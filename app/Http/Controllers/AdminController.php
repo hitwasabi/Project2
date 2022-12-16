@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-
+    //oh yeah OMG
 
     //
     function viewHome(){
