@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'PT Store',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>PT</b>Store',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -313,15 +313,15 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Home',
+            'url'         => 'admin/home',
             'icon'        => 'fas fa-home',
 
         ],
         [
             'text' => 'Product',
-            'url'  => 'admin/product',
-            'icon' => 'fab fa-apple',
+            'url'  => 'admin/product/index',
+            'icon' => 'fab fa-wikipedia-w',
         ],
 
 

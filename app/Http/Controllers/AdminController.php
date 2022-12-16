@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,18 +15,20 @@ class AdminController extends Controller
         return view('admin/home');
     }
 
-    function viewClient(){
-        return view('client/home');
-    }
-
     function viewProduct(){
-        $products = Product::all();
-        dd($products);
-        return view('client/home',['home'=>$products]);
+        $products = DB::table('products')
+            ->join('image', 'products.product_id', '=', 'image.product_id')
+            ->join('category', 'products.cate_id', '=', 'category.cate_id')
+            ->join('sell_product', 'products.product_id', '=', 'sell_product.product_id')
+            ->select('products.*', 'image.url', 'category.cate_name','sell_product.prices')
+            ->get();
+        return view('admin/product/index',['products'=>$products]);
     }
 
-    function show($product_id){
-        $product = Product::findById($product_id);
-        return view('client/home',['home'=>$product]);
+    function viewClient(){
+        $products = DB::table('products')->get();
+        return view('client/home',['products'=>$products]);
     }
+
+
 }

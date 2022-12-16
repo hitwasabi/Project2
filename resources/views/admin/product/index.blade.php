@@ -1,3 +1,6 @@
+@extends('layouts.admin_base')
+
+@section('content')
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,10 +15,37 @@
 </head>
 <body>
 <h1>Product</h1>
-@foreach($products as $product)
-    {{$product->product_code}}
-    <br>
-@endforeach
+<br>
+<a href="{{url('admin/product/add_product')}}">
+<button type="button" class="btn btn-primary btn-lg" class="fa fa-plus">Add product</button>
+</a>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Product_Id</th>
+        <th scope="col">Product_Image</th>
+        <th scope="col">Category_Name</th>
+        <th scope="col">Product_Name</th>
+        <th scope="col">Product_Price</th>
+        <th scope="col">Product_Code</th>
+        <th scope="col">Product_Info</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    @foreach($products as $product)
+    <tr>
+        <th scope="row">{{$product->product_id}}</th>
+        <td><img src="{{$product->url}}" width="100px"></td>
+        <td>{{$product->cate_name}}</td>
+        <td>{{$product->product_name}}</td>
+        <td>{{$product->prices}}</td>
+        <td>{{$product->product_code}}</td>
+        <td>{{$product->product_info}}</td>
+    </tr>
+    @endforeach
+    </tbody>
+</table>
 
 
 <!-- Optional JavaScript; choose one of the two! -->
@@ -30,3 +60,4 @@
 -->
 </body>
 </html>
+@endsection
