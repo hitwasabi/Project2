@@ -16,7 +16,7 @@ class ProductController extends Controller
         $url = $request->get('url');
         $cate_name = $request->get('cateName');
         $product_name = $request->get('productName');
-        $prices = $request->get('Prices');
+        $prices = $request->get('prices');
         $product_code = $request->get('productCode');
         $product_info = $request->get('productInfo');
 
